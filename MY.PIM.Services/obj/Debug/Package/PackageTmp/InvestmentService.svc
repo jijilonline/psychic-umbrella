@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MY.PIM.Services.InvestmentService" CodeBehind="InvestmentService.svc.cs" %>

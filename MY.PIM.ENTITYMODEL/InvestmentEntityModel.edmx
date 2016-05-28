@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MY.PIM.ENTITYMODEL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountMaster">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountType" Type="varchar" MaxLength="50" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BankMaster">
+          <Key>
+            <PropertyRef Name="BankId" />
+          </Key>
+          <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BankName" Type="varchar" MaxLength="50" />
+          <Property Name="BankAccountType" Type="varchar" MaxLength="50" />
+          <Property Name="BankAccountNum" Type="varchar" MaxLength="20" />
+          <Property Name="RoutingNumber" Type="varchar" MaxLength="20" />
+          <Property Name="IFSCCode" Type="varchar" MaxLength="10" />
+          <Property Name="BranchName" Type="varchar" MaxLength="50" />
+          <Property Name="BankAddress1" Type="varchar" MaxLength="50" />
+          <Property Name="BankAddress2" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="StateCode" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PolicyMaster">
+          <Key>
+            <PropertyRef Name="PolicyId" />
+          </Key>
+          <Property Name="PolicyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PolicyName" Type="varchar" MaxLength="200" />
+          <Property Name="PolicyType" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="PolicyNumber" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PolicyStartDt" Type="datetime" Nullable="false" />
+          <Property Name="PolicyMaturityDt" Type="datetime" Nullable="false" />
+          <Property Name="PolicyPremiumAmt" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PolicyStatus" Type="varchar" MaxLength="50" />
+          <Property Name="PolicyPaymentTerm" Type="varchar" MaxLength="10" />
+          <Property Name="PolicyMaturity" Type="varchar" MaxLength="10" />
+          <Property Name="PolicySumAssured" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PolicyPaymentFrequency" Type="varchar" MaxLength="20" />
+          <Property Name="PolicyUserId" Type="varchar" MaxLength="50" />
+          <Property Name="PolicyPassword" Type="varchar" MaxLength="50" />
+          <Property Name="PolicyMobile" Type="varchar" MaxLength="20" />
+          <Property Name="PolicyWebsite" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <Function Name="usp_pam_GetBankDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="bankName" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="MYPIMENTITYMODELStoreContainer">
+          <EntitySet Name="AccountMaster" EntityType="Self.AccountMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BankMaster" EntityType="Self.BankMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PolicyMaster" EntityType="Self.PolicyMaster" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MY.PIM.ENTITYMODEL" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="InvestmentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PolicyMasters" EntityType="MY.PIM.ENTITYMODEL.PolicyMaster" />
+          <EntitySet Name="AccountMasters" EntityType="MY.PIM.ENTITYMODEL.AccountMaster" />
+          <EntitySet Name="BankMasters" EntityType="MY.PIM.ENTITYMODEL.BankMaster" />
+          <FunctionImport Name="usp_pam_GetBankDetails" ReturnType="Collection(MY.PIM.ENTITYMODEL.usp_pam_GetBankDetails_Result)">
+          <Parameter Name="bankName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="PolicyMaster">
+          <Key>
+            <PropertyRef Name="PolicyId" />
+          </Key>
+          <Property Name="PolicyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PolicyName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyType" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyStartDt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PolicyMaturityDt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PolicyPremiumAmt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PolicyStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyPaymentTerm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyMaturity" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PolicySumAssured" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PolicyPaymentFrequency" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyMobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PolicyWebsite" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AccountMaster">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BankMaster">
+          <Key>
+            <PropertyRef Name="BankId" />
+          </Key>
+          <Property Name="BankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BankAccountType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BankAccountNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RoutingNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IFSCCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BranchName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BankAddress1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BankAddress2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="usp_pam_GetBankDetails_Result">
+          <Property Type="Int32" Name="BankId" Nullable="false" />
+          <Property Type="String" Name="BankName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BankAccountType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BankAccountNum" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="RoutingNumber" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="BranchName" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BankAddress1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BankAddress2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ZipCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MYPIMENTITYMODELStoreContainer" CdmEntityContainer="InvestmentEntities">
+          <EntitySetMapping Name="PolicyMasters">
+            <EntityTypeMapping TypeName="MY.PIM.ENTITYMODEL.PolicyMaster">
+              <MappingFragment StoreEntitySet="PolicyMaster">
+                <ScalarProperty Name="PolicyWebsite" ColumnName="PolicyWebsite" />
+                <ScalarProperty Name="PolicyMobile" ColumnName="PolicyMobile" />
+                <ScalarProperty Name="PolicyPassword" ColumnName="PolicyPassword" />
+                <ScalarProperty Name="PolicyUserId" ColumnName="PolicyUserId" />
+                <ScalarProperty Name="PolicyPaymentFrequency" ColumnName="PolicyPaymentFrequency" />
+                <ScalarProperty Name="PolicySumAssured" ColumnName="PolicySumAssured" />
+                <ScalarProperty Name="PolicyMaturity" ColumnName="PolicyMaturity" />
+                <ScalarProperty Name="PolicyPaymentTerm" ColumnName="PolicyPaymentTerm" />
+                <ScalarProperty Name="PolicyStatus" ColumnName="PolicyStatus" />
+                <ScalarProperty Name="PolicyPremiumAmt" ColumnName="PolicyPremiumAmt" />
+                <ScalarProperty Name="PolicyMaturityDt" ColumnName="PolicyMaturityDt" />
+                <ScalarProperty Name="PolicyStartDt" ColumnName="PolicyStartDt" />
+                <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+                <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+                <ScalarProperty Name="PolicyName" ColumnName="PolicyName" />
+                <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountMasters">
+            <EntityTypeMapping TypeName="MY.PIM.ENTITYMODEL.AccountMaster">
+              <MappingFragment StoreEntitySet="AccountMaster">
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankMasters">
+            <EntityTypeMapping TypeName="MY.PIM.ENTITYMODEL.BankMaster">
+              <MappingFragment StoreEntitySet="BankMaster">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="BankAddress2" ColumnName="BankAddress2" />
+                <ScalarProperty Name="BankAddress1" ColumnName="BankAddress1" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="IFSCCode" ColumnName="IFSCCode" />
+                <ScalarProperty Name="RoutingNumber" ColumnName="RoutingNumber" />
+                <ScalarProperty Name="BankAccountNum" ColumnName="BankAccountNum" />
+                <ScalarProperty Name="BankAccountType" ColumnName="BankAccountType" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_pam_GetBankDetails" FunctionName="MY.PIM.ENTITYMODEL.Store.usp_pam_GetBankDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MY.PIM.ENTITYMODEL.usp_pam_GetBankDetails_Result">
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankAccountType" ColumnName="BankAccountType" />
+                <ScalarProperty Name="BankAccountNum" ColumnName="BankAccountNum" />
+                <ScalarProperty Name="RoutingNumber" ColumnName="RoutingNumber" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="BankAddress1" ColumnName="BankAddress1" />
+                <ScalarProperty Name="BankAddress2" ColumnName="BankAddress2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

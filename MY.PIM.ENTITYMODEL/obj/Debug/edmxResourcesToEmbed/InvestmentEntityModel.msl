@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MYPIMENTITYMODELStoreContainer" CdmEntityContainer="InvestmentEntities">
+    <EntitySetMapping Name="PolicyMasters">
+      <EntityTypeMapping TypeName="MY.PIM.ENTITYMODEL.PolicyMaster">
+        <MappingFragment StoreEntitySet="PolicyMaster">
+          <ScalarProperty Name="PolicyWebsite" ColumnName="PolicyWebsite" />
+          <ScalarProperty Name="PolicyMobile" ColumnName="PolicyMobile" />
+          <ScalarProperty Name="PolicyPassword" ColumnName="PolicyPassword" />
+          <ScalarProperty Name="PolicyUserId" ColumnName="PolicyUserId" />
+          <ScalarProperty Name="PolicyPaymentFrequency" ColumnName="PolicyPaymentFrequency" />
+          <ScalarProperty Name="PolicySumAssured" ColumnName="PolicySumAssured" />
+          <ScalarProperty Name="PolicyMaturity" ColumnName="PolicyMaturity" />
+          <ScalarProperty Name="PolicyPaymentTerm" ColumnName="PolicyPaymentTerm" />
+          <ScalarProperty Name="PolicyStatus" ColumnName="PolicyStatus" />
+          <ScalarProperty Name="PolicyPremiumAmt" ColumnName="PolicyPremiumAmt" />
+          <ScalarProperty Name="PolicyMaturityDt" ColumnName="PolicyMaturityDt" />
+          <ScalarProperty Name="PolicyStartDt" ColumnName="PolicyStartDt" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+          <ScalarProperty Name="PolicyName" ColumnName="PolicyName" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountMasters">
+      <EntityTypeMapping TypeName="MY.PIM.ENTITYMODEL.AccountMaster">
+        <MappingFragment StoreEntitySet="AccountMaster">
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankMasters">
+      <EntityTypeMapping TypeName="MY.PIM.ENTITYMODEL.BankMaster">
+        <MappingFragment StoreEntitySet="BankMaster">
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="BankAddress2" ColumnName="BankAddress2" />
+          <ScalarProperty Name="BankAddress1" ColumnName="BankAddress1" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="IFSCCode" ColumnName="IFSCCode" />
+          <ScalarProperty Name="RoutingNumber" ColumnName="RoutingNumber" />
+          <ScalarProperty Name="BankAccountNum" ColumnName="BankAccountNum" />
+          <ScalarProperty Name="BankAccountType" ColumnName="BankAccountType" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_pam_GetBankDetails" FunctionName="MY.PIM.ENTITYMODEL.Store.usp_pam_GetBankDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MY.PIM.ENTITYMODEL.usp_pam_GetBankDetails_Result">
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankAccountType" ColumnName="BankAccountType" />
+          <ScalarProperty Name="BankAccountNum" ColumnName="BankAccountNum" />
+          <ScalarProperty Name="RoutingNumber" ColumnName="RoutingNumber" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BankAddress1" ColumnName="BankAddress1" />
+          <ScalarProperty Name="BankAddress2" ColumnName="BankAddress2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

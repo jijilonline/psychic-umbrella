@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\MYPIMService</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="BankService.svc">
+      <publishTime>02/13/2016 17:01:46</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>01/27/2016 22:33:47</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/27/2016 22:26:17</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/27/2016 22:26:17</publishTime>
+    </File>
+    <File Include="bin/MY.PIM.BUSINESSMANAGER.dll">
+      <publishTime>02/13/2016 21:51:23</publishTime>
+    </File>
+    <File Include="bin/MY.PIM.BUSINESSMANAGER.pdb">
+      <publishTime>02/13/2016 21:51:23</publishTime>
+    </File>
+    <File Include="bin/MY.PIM.ENTITYMODEL.dll">
+      <publishTime>02/13/2016 21:51:22</publishTime>
+    </File>
+    <File Include="bin/MY.PIM.ENTITYMODEL.pdb">
+      <publishTime>02/13/2016 21:51:22</publishTime>
+    </File>
+    <File Include="bin/MY.PIM.Services.dll">
+      <publishTime>02/13/2016 21:51:24</publishTime>
+    </File>
+    <File Include="bin/MY.PIM.Services.pdb">
+      <publishTime>02/13/2016 21:51:24</publishTime>
+    </File>
+    <File Include="bin/RestSharp.dll">
+      <publishTime>01/27/2016 22:34:20</publishTime>
+    </File>
+    <File Include="InvestmentService.svc">
+      <publishTime>02/13/2016 15:44:00</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/04/2016 19:31:59</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/13/2016 21:51:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿1>------ Build started: Project: MY.PIM.Services, Configuration: Debug Any CPU ------
+1>  MY.PIM.Services -> D:\POC\MY.PIM\MY.PIM.Services\bin\MY.PIM.Services.dll
+2>------ Publish started: Project: MY.PIM.Services, Configuration: Debug Any CPU ------
+2>Connecting to D:\MYPIMService...
+2>Transformed Web.config using D:\POC\MY.PIM\MY.PIM.Services\Web.Debug.config into obj\Debug\TransformWebConfig\transformed\Web.config.
+2>Copying all files to temporary location below for package/publish:
+2>obj\Debug\Package\PackageTmp.
+2>Publishing folder /...
+2>Publishing folder bin...
+2>Site was published successfully file:///D:/MYPIMService
+2>
+========== Build: 1 succeeded, 0 failed, 3 up-to-date, 0 skipped ==========
+========== Publish: 1 succeeded, 0 failed, 0 skipped ==========

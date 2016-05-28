@@ -1,0 +1,11 @@
+D:\POC\MY.PIM\MY.PIM.UIP\bin\Debug\MY.PIM.UIP.dll
+D:\POC\MY.PIM\MY.PIM.UIP\bin\Debug\MY.PIM.UIP.pdb
+D:\POC\MY.PIM\MY.PIM.UIP\bin\Debug\MY.PIM.BE.dll
+D:\POC\MY.PIM\MY.PIM.UIP\bin\Debug\Newtonsoft.Json.dll
+D:\POC\MY.PIM\MY.PIM.UIP\bin\Debug\RestSharp.dll
+D:\POC\MY.PIM\MY.PIM.UIP\bin\Debug\MY.PIM.BE.pdb
+D:\POC\MY.PIM\MY.PIM.UIP\bin\Debug\Newtonsoft.Json.xml
+D:\POC\MY.PIM\MY.PIM.UIP\bin\Debug\RestSharp.xml
+D:\POC\MY.PIM\MY.PIM.UIP\obj\Debug\MY.PIM.UIP.csprojResolveAssemblyReference.cache
+D:\POC\MY.PIM\MY.PIM.UIP\obj\Debug\MY.PIM.UIP.dll
+D:\POC\MY.PIM\MY.PIM.UIP\obj\Debug\MY.PIM.UIP.pdb

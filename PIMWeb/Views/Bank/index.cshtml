@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Bank Details";
+}
+<h2>Bank Details</h2>
+
+<div ng-app="PIMApp">
+    <div ng-controller="BankController">
+        <table>
+            <tr>
+                <td>
+                    Bank Name
+                </td>
+                <td>
+                    BankAccountType
+                </td>
+                <td>
+                    BankAccountNum
+                </td>
+                <td>
+                    RoutingNumber
+                </td>
+                <td>
+                    IFSCCode
+                </td>
+                <td>
+                    BranchName
+                </td>
+                <td>
+                    BankAddress1
+                </td>
+                <td>
+                    BankAddress2
+                </td>
+                <td>
+                    City
+                </td>
+                <td>
+                    StateCode
+                </td>
+                <td>
+                    Country
+                </td>
+                <td>
+                    ZipCode
+                </td>
+                <td>
+                    PhoneNumber
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{BankMaster.BankName}}
+                </td>
+                <td>
+                    {{BankMaster.BankAccountType}}
+                </td>
+                <td>
+                    {{BankMaster.BankAccountNum}}
+                </td>
+                <td>
+                    {{BankMaster.RoutingNumber}}
+                </td>
+                <td>
+                    {{BankMaster.IFSCCode}}
+                </td>
+                <td>
+                    {{BankMaster.BranchName}}
+                </td>
+                <td>
+                    {{BankMaster.BankAddress1}}
+                </td>
+                <td>
+                    {{BankMaster.BankAddress2}}
+                </td>
+                <td>
+                    {{BankMaster.City}}
+                </td>
+                <td>
+                    {{BankMaster.StateCode}}
+                </td>
+                <td>
+                    {{BankMaster.Country}}
+                </td>
+                <td>
+                    {{BankMaster.ZipCode}}
+                </td>
+                <td>
+                    {{BankMaster.PhoneNumber}}
+
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+@section scripts{
+<script src="~/Scripts/ControllerJS/BankController.js"></script>    
+    }
+

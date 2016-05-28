@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MY.PIM.ENTITYMODEL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountMaster">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountType" Type="varchar" MaxLength="50" />
+    <Property Name="AccountNumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BankMaster">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankName" Type="varchar" MaxLength="50" />
+    <Property Name="BankAccountType" Type="varchar" MaxLength="50" />
+    <Property Name="BankAccountNum" Type="varchar" MaxLength="20" />
+    <Property Name="RoutingNumber" Type="varchar" MaxLength="20" />
+    <Property Name="IFSCCode" Type="varchar" MaxLength="10" />
+    <Property Name="BranchName" Type="varchar" MaxLength="50" />
+    <Property Name="BankAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="BankAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="StateCode" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PolicyMaster">
+    <Key>
+      <PropertyRef Name="PolicyId" />
+    </Key>
+    <Property Name="PolicyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PolicyName" Type="varchar" MaxLength="200" />
+    <Property Name="PolicyType" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="PolicyNumber" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PolicyStartDt" Type="datetime" Nullable="false" />
+    <Property Name="PolicyMaturityDt" Type="datetime" Nullable="false" />
+    <Property Name="PolicyPremiumAmt" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PolicyStatus" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyPaymentTerm" Type="varchar" MaxLength="10" />
+    <Property Name="PolicyMaturity" Type="varchar" MaxLength="10" />
+    <Property Name="PolicySumAssured" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PolicyPaymentFrequency" Type="varchar" MaxLength="20" />
+    <Property Name="PolicyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyPassword" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyMobile" Type="varchar" MaxLength="20" />
+    <Property Name="PolicyWebsite" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <Function Name="usp_pam_GetBankDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bankName" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="MYPIMENTITYMODELStoreContainer">
+    <EntitySet Name="AccountMaster" EntityType="Self.AccountMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BankMaster" EntityType="Self.BankMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PolicyMaster" EntityType="Self.PolicyMaster" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

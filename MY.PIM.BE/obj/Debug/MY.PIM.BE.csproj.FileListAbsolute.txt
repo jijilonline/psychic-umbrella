@@ -1,0 +1,4 @@
+D:\POC\MY.PIM\MY.PIM.BE\bin\Debug\MY.PIM.BE.dll
+D:\POC\MY.PIM\MY.PIM.BE\bin\Debug\MY.PIM.BE.pdb
+D:\POC\MY.PIM\MY.PIM.BE\obj\Debug\MY.PIM.BE.dll
+D:\POC\MY.PIM\MY.PIM.BE\obj\Debug\MY.PIM.BE.pdb
